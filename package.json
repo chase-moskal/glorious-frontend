@@ -5,7 +5,8 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-    "build": "rimraf build && tsc && browserify build/main.js > build/main.bundle.js && node-sass --source-map true src/style.scss build/style.css && echo Build complete.",
+    "build": "rimraf build && tsc && set NODE_ENV=production&& browserify build/main.js | uglifyjs -m > build/main.bundle.js && node-sass --source-map true src/style.scss build/style.css && echo Build complete.",
+    "build-debug": "rimraf build && tsc && browserify --debug build/main.js > build/main.bundle.js && node-sass --source-map true src/style.scss build/style.css && echo Build complete.",
     "test": "echo Not test driven, lol && exit 0",
     "start": "http-server -p 8080"
   },
@@ -16,7 +17,8 @@
     "http-server": "^0.9.0",
     "node-sass": "^3.13.0",
     "rimraf": "^2.5.4",
-    "typescript": "^2.1.1"
+    "typescript": "^2.1.1",
+    "uglify-js": "^2.7.4"
   },
   "dependencies": {
     "@types/react": "^0.14.49",
