@@ -1,0 +1,14 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "rootDirs": ["src"],
+    "outDir": "build",
+    "jsx": "react",
+    "paths": {},
+    "sourceMap": true
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.wrappingColumn": 0,
+  "editor.renderWhitespace": "boundary",
+  "editor.wrappingIndent": "indent",
+  "files.exclude": {
+    "build": true,
+    "node_modules": true
+  },
+  "typescript.tsdk": "./node_modules/typescript/lib/"
+}
