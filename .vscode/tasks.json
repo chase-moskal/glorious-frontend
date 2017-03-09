@@ -10,12 +10,13 @@
       "args": ["install"]
     },
     {
-      "taskName": "update",
-      "args": ["update"]
-    },
-    {
       "taskName": "build",
       "args": ["run", "build", "-s"]
+    },
+    {
+      "taskName": "build-debug",
+      "args": ["run", "build-debug", "-s"],
+      "isBuildCommand": true
     },
     {
       "taskName": "test",

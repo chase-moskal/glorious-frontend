@@ -8,6 +8,7 @@
     "rootDirs": ["src"],
     "outDir": "build",
     "jsx": "react",
+    "lib": ["dom", "es6"],
     "paths": {},
     "sourceMap": true
   }

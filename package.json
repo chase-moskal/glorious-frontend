@@ -5,24 +5,28 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-    "build": "rimraf build && tsc && set NODE_ENV=production&& browserify build/main.js | uglifyjs -m > build/main.bundle.js && node-sass --source-map true src/style.scss build/style.css && echo Build complete.",
-    "build-debug": "rimraf build && tsc && browserify --debug build/main.js > build/main.bundle.js && node-sass --source-map true src/style.scss build/style.css && echo Build complete.",
+    "build": "rimraf build && run-p build-scripts build-styles && echo Done production build.",
+    "build-debug": "rimraf build && run-p build-scripts-debug build-styles && echo Done debug build.",
+    "build-scripts": "tsc && set NODE_ENV=production&& browserify build/main.js | uglifyjs -m > build/main.bundle.js",
+    "build-scripts-debug": "tsc && browserify --debug build/main.js > build/main.bundle.js",
+    "build-styles": "node-sass --source-map true src/style.scss build/style.css",
     "test": "echo Not test driven, lol && exit 0",
     "start": "http-server -p 8080"
   },
   "author": "Chase Moskal <chasemoskal@gmail.com>",
   "license": "ISC",
   "devDependencies": {
+    "@types/react": "^0.14.49",
+    "@types/react-dom": "^0.14.18",
     "browserify": "^13.1.1",
     "http-server": "^0.9.0",
     "node-sass": "^3.13.0",
+    "npm-run-all": "^4.0.2",
     "rimraf": "^2.5.4",
-    "typescript": "^2.1.1",
+    "typescript": "^2.2.1",
     "uglify-js": "^2.7.4"
   },
   "dependencies": {
-    "@types/react": "^0.14.49",
-    "@types/react-dom": "^0.14.18",
     "react": "^15.4.0",
     "react-dom": "^15.4.0"
   }

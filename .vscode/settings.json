@@ -1,9 +1,13 @@
 {
-  "editor.tabSize": 2,
+  "editor.detectIndentation": false,
   "editor.insertSpaces": true,
-  "editor.wrappingColumn": 0,
+  "editor.tabSize": 2,
   "editor.renderWhitespace": "boundary",
+  "editor.wordWrap": "on",
   "editor.wrappingIndent": "indent",
+  "files.trimTrailingWhitespace": true,
+  "files.eol": "\n",
+  "files.encoding": "utf8",
   "files.exclude": {
     "build": true,
     "node_modules": true
