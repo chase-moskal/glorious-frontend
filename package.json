@@ -9,7 +9,7 @@
 		"build-debug": "rimraf dist && run-p build-scripts-debug build-styles && echo Done debug build.",
 		"build-scripts": "tsc && set NODE_ENV=production&& browserify dist/main.js | uglifyjs -m > dist/main.bundle.js",
 		"build-scripts-debug": "tsc && browserify --debug dist/main.js > dist/main.bundle.js",
-		"build-styles": "node-sass --source-map true src/style.scss dist/style.css",
+		"build-styles": "node-sass --source-map true source/style.scss dist/style.css",
 		"test": "echo Not test driven, lol && exit 0",
 		"start": "http-server -p 8080"
 	},
