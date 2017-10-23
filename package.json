@@ -1,7 +1,7 @@
 {
 	"name": "glorious-frontend",
-	"version": "0.1.0-dev",
-	"description": "Frontend application foundation featuring TypeScript, React, and Sass.",
+	"version": "0.1.0",
+	"description": "frontend application foundation featuring typescript, react, mobx, sass",
 	"main": "index.js",
 	"private": true,
 	"scripts": {
