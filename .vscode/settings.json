@@ -7,7 +7,7 @@
 	"files.insertFinalNewline": true,
 
 	"files.exclude": {
-		"dist": false,
+		"dist": true,
 		"node_modules": true,
 		"*.log*": true
 	},
