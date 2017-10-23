@@ -2,9 +2,11 @@
 Glorious Frontend
 =================
 
-View it live: [chasemoskal.github.io/glorious-frontend](https://chasemoskal.github.io/glorious-frontend/)
+[chasemoskal.github.io/glorious-frontend](https://chasemoskal.github.io/glorious-frontend/) (view it live)
 
-- TypeScript 2.1
+- TypeScript
 - React
+- Mobx
 - Browserify
+- Uglify
 - Sass
