@@ -2,7 +2,7 @@
 import * as React from "react"
 import * as ReactDOM from "react-dom"
 
-import Counter from "./Counter";
+import Counter from "./counter";
 
 export interface AppProps {}
 export interface AppState {}
