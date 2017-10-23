@@ -1,15 +1,14 @@
 {
-  "compileOnSave": true,
-  "compilerOptions": {
-    "module": "commonjs",
-    "target": "es5",
-    "moduleResolution": "node",
-    "baseUrl": ".",
-    "rootDirs": ["src"],
-    "outDir": "build",
-    "jsx": "react",
-    "lib": ["dom", "es6"],
-    "paths": {},
-    "sourceMap": true
-  }
+	"compilerOptions": {
+		"baseUrl": ".",
+		"rootDir": "source",
+		"outDir": "dist",
+		"target": "es6",
+		"lib": ["es6", "dom"],
+		"module": "commonjs",
+		"moduleResolution": "node",
+		"jsx": "react",
+		"experimentalDecorators": true,
+		"sourceMap": true
+	}
 }

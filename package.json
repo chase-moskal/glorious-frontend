@@ -1,33 +1,38 @@
 {
-  "name": "glorious-frontend",
-  "version": "0.0.0",
-  "description": "Frontend application foundation featuring TypeScript, React, and Sass.",
-  "main": "index.js",
-  "private": true,
-  "scripts": {
-    "build": "rimraf build && run-p build-scripts build-styles && echo Done production build.",
-    "build-debug": "rimraf build && run-p build-scripts-debug build-styles && echo Done debug build.",
-    "build-scripts": "tsc && set NODE_ENV=production&& browserify build/main.js | uglifyjs -m > build/main.bundle.js",
-    "build-scripts-debug": "tsc && browserify --debug build/main.js > build/main.bundle.js",
-    "build-styles": "node-sass --source-map true src/style.scss build/style.css",
-    "test": "echo Not test driven, lol && exit 0",
-    "start": "http-server -p 8080"
-  },
-  "author": "Chase Moskal <chasemoskal@gmail.com>",
-  "license": "ISC",
-  "devDependencies": {
-    "@types/react": "^0.14.49",
-    "@types/react-dom": "^0.14.18",
-    "browserify": "^13.1.1",
-    "http-server": "^0.9.0",
-    "node-sass": "^3.13.0",
-    "npm-run-all": "^4.0.2",
-    "rimraf": "^2.5.4",
-    "typescript": "^2.2.1",
-    "uglify-js": "^2.7.4"
-  },
-  "dependencies": {
-    "react": "^15.4.0",
-    "react-dom": "^15.4.0"
-  }
+	"name": "glorious-frontend",
+	"version": "0.1.0-dev",
+	"description": "Frontend application foundation featuring TypeScript, React, and Sass.",
+	"main": "index.js",
+	"private": true,
+	"scripts": {
+		"prepare": "npm run build -s",
+		"build": "rimraf dist && run-p build-scripts build-styles && echo Done production build.",
+		"build-debug": "rimraf dist && run-p build-scripts-debug build-styles && echo Done debug build.",
+		"build-scripts": "tsc && browserify dist/main.js -g [ envify --NODE_ENV production ] -g uglifyify > dist/main.bundle.uncompressed.js && uglifyjs -cm < dist/main.bundle.uncompressed.js > dist/main.bundle.js",
+		"build-scripts-debug": "tsc && browserify --debug dist/main.js > dist/main.bundle.js",
+		"build-styles": "node-sass --source-map true source/style.scss dist/style.css",
+		"test": "echo Not test driven, lol && exit 0",
+		"start": "http-server -p 8080"
+	},
+	"author": "Chase Moskal <chasemoskal@gmail.com>",
+	"license": "ISC",
+	"devDependencies": {
+		"@types/react": "16.0.18",
+		"@types/react-dom": "16.0.2",
+		"browserify": "14.5.0",
+		"envify": "4.1.0",
+		"http-server": "0.10.0",
+		"node-sass": "4.5.3",
+		"npm-run-all": "4.1.1",
+		"rimraf": "2.6.2",
+		"typescript": "2.5.3",
+		"uglify-es": "3.1.5",
+		"uglifyify": "4.0.4"
+	},
+	"dependencies": {
+		"mobx": "3.3.1",
+		"mobx-react": "4.3.3",
+		"react": "16.0.0",
+		"react-dom": "16.0.0"
+	}
 }

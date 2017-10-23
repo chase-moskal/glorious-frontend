@@ -1,26 +1,19 @@
 {
-  "version": "0.1.0",
-  "command": "npm",
-  "isShellCommand": true,
-  "showOutput": "always",
-  "suppressTaskName": true,
-  "tasks": [
-    {
-      "taskName": "install",
-      "args": ["install"]
-    },
-    {
-      "taskName": "build",
-      "args": ["run", "build", "-s"]
-    },
-    {
-      "taskName": "build-debug",
-      "args": ["run", "build-debug", "-s"],
-      "isBuildCommand": true
-    },
-    {
-      "taskName": "test",
-      "args": ["test"]
-    }
-  ]
+	"version": "0.1.0",
+	"command": "npm",
+	"isShellCommand": true,
+	"showOutput": "always",
+	"suppressTaskName": true,
+	"tasks": [
+		{
+			"taskName": "build",
+			"args": ["install", "--silent"],
+			"isBuildCommand": true,
+			"problemMatcher": ["$tsc"]
+		},
+		{
+			"taskName": "test",
+			"args": ["test"]
+		}
+	]
 }
