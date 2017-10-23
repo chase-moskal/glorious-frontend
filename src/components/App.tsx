@@ -12,13 +12,13 @@ export interface AppState {}
  */
 export default class App extends React.Component<AppProps, AppState> {
 
-  render() {
-    return (
-      <div className="app">
-        <h1>Glorious Frontend</h1>
-        <hr/>
-        <Counter start={0}/>
-      </div>
-    )
-  }
+	render() {
+		return (
+			<div className="app">
+				<h1>Glorious Frontend</h1>
+				<hr/>
+				<Counter start={0}/>
+			</div>
+		)
+	}
 }
