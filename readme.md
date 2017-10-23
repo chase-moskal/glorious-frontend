@@ -9,8 +9,8 @@ Glorious Frontend
 View it live: [chasemoskal.github.io/glorious-frontend](https://chasemoskal.github.io/glorious-frontend/)
 
 - TypeScript
-- React
-- Mobx
+- Preact (lightweight react replacement)
+- Mobx (state management, observables)
 - Browserify
 - Uglify
 - Sass
