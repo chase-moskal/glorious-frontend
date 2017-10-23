@@ -1,9 +1,7 @@
 
-import * as React from "react"
-import * as ReactDOM from "react-dom"
-
+import {h, Component} from "preact"
+import {observer} from "mobx-preact"
 import {observable, action} from "mobx"
-import {observer} from "mobx-react"
 
 export class CounterStore {
 	@observable count: number = 0
@@ -14,7 +12,7 @@ export class CounterStore {
 }
 
 @observer
-export default class Counter extends React.Component<{store: CounterStore}> {
+export default class Counter extends Component<{store: CounterStore}, any> {
 
 	private incrementHandler = () => this.props.store.increment()
 
