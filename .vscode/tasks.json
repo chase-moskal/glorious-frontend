@@ -8,7 +8,8 @@
 		{
 			"taskName": "build",
 			"args": ["install", "--silent"],
-			"isBuildCommand": true
+			"isBuildCommand": true,
+			"problemMatcher": ["$tsc"]
 		},
 		{
 			"taskName": "test",
