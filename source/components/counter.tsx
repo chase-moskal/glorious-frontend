@@ -2,39 +2,28 @@
 import * as React from "react"
 import * as ReactDOM from "react-dom"
 
-export interface CounterProps {
+import {observable, action} from "mobx"
+import {observer} from "mobx-react"
 
-	/** Number that the counter starts at. */
-	start?: number;
+export class CounterStore {
+	@observable count: number = 0
+
+	@action increment() {
+		this.count++
+	}
 }
 
-export interface CounterState {
+@observer
+export default class Counter extends React.Component<{store: CounterStore}> {
 
-	/** Current numerical value of the counter. */
-	count: number;
-}
-
-/**
- * Counter component displays a number which can be incremented with the push of a button.
- */
-export default class Counter extends React.Component<CounterProps, CounterState> {
-
-	constructor(props) {
-		super(props)
-		this.state = {
-			count: this.props.start || 0
-		}
-	}
-
-	increment() {
-		this.setState({ count: this.state.count + 1 })
-	}
+	private incrementHandler = () => this.props.store.increment()
 
 	render() {
+		const {store} = this.props
 		return (
 			<div className="counter">
-				<p>Current count: <strong>{this.state.count}</strong></p>
-				<button onClick={this.increment.bind(this)}>Increment</button>
+				<p>Current count: <strong>{store.count}</strong></p>
+				<button onClick={this.incrementHandler}>Increment</button>
 			</div>
 		)
 	}

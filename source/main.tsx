@@ -2,6 +2,10 @@
 import * as React from "react"
 import * as ReactDOM from "react-dom"
 
-import App from "./components/app"
+import App, {AppStore} from "./components/app"
 
-ReactDOM.render(<App/>, document.querySelector("#landing-zone"))
+const store = new AppStore()
+const app = <App {...{store}}/>
+const container = document.querySelector("#app")
+
+ReactDOM.render(app, container)

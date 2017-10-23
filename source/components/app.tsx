@@ -2,22 +2,24 @@
 import * as React from "react"
 import * as ReactDOM from "react-dom"
 
-import Counter from "./counter";
+import {observable} from "mobx"
+import {observer} from "mobx-react"
 
-export interface AppProps {}
-export interface AppState {}
+import Counter, {CounterStore} from "./counter"
 
-/**
- * Root application component.
- */
-export default class App extends React.Component<AppProps, AppState> {
+export class AppStore {
+	@observable counter = new CounterStore()
+}
 
+@observer
+export default class App extends React.Component<{store: AppStore}> {
 	render() {
+		const {store} = this.props
 		return (
 			<div className="app">
 				<h1>Glorious Frontend</h1>
 				<hr/>
-				<Counter start={0}/>
+				<Counter store={store.counter}/>
 			</div>
 		)
 	}
