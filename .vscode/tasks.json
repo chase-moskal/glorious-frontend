@@ -12,8 +12,10 @@
 			"problemMatcher": ["$tsc"]
 		},
 		{
-			"taskName": "test",
-			"args": ["test"]
+			"taskName": "build-debug",
+			"args": ["run", "build-debug", "--silent"],
+			"isBuildCommand": true,
+			"problemMatcher": ["$tsc"]
 		}
 	]
 }
