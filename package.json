@@ -6,10 +6,11 @@
 	"private": true,
 	"scripts": {
 		"prepare": "npm run build -s",
-		"build": "rimraf dist && run-p build-scripts build-styles && echo Done production build.",
-		"build-debug": "rimraf dist && run-p build-scripts-debug build-styles && echo Done debug build.",
-		"build-scripts": "tsc && browserify dist/main.js -g [ envify --NODE_ENV production ] -g uglifyify > dist/main.bundle.uncompressed.js && uglifyjs -cm < dist/main.bundle.uncompressed.js > dist/main.bundle.js",
-		"build-scripts-debug": "tsc && browserify --debug dist/main.js > dist/main.bundle.js",
+		"clean": "rimraf dist && mkdirp dist",
+		"build": "npm run clean -s && run-p build-scripts build-styles && echo Done production build.",
+		"build-debug": "npm run clean -s && run-p build-scripts-debug build-styles && echo Done debug build.",
+		"build-scripts": "browserify source/main.tsx -p [ tsify ] -g [ envify --NODE_ENV production ] -g uglifyify > dist/main.bundle.uncompressed.js && uglifyjs -cm < dist/main.bundle.uncompressed.js > dist/main.bundle.js",
+		"build-scripts-debug": "browserify source/main.tsx --debug -p [ tsify ] > dist/main.bundle.js",
 		"build-styles": "node-sass --source-map true source/style.scss dist/style.css",
 		"test": "echo Not test driven, lol && exit 0",
 		"start": "http-server -p 8080"
@@ -20,6 +21,7 @@
 		"browserify": "14.5.0",
 		"envify": "4.1.0",
 		"http-server": "0.10.0",
+		"mkdirp": "0.5.1",
 		"node-sass": "4.5.3",
 		"npm-run-all": "4.1.1",
 		"rimraf": "2.6.2",
@@ -30,6 +32,7 @@
 	"dependencies": {
 		"mobx": "3.3.1",
 		"mobx-preact": "0.3.1",
-		"preact": "8.2.5"
+		"preact": "8.2.5",
+		"tsify": "3.0.3"
 	}
 }
