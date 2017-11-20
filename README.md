@@ -9,7 +9,7 @@ you can copy/clone/fork this project and start your own application!
 ## features and motivations
 
 - **minimalistic** — choose your own tools, for anything you need, like page routing, or whatever
-- **lightweight** — the infrastructure weighs less than 30 kB gzipped
+- **lightweight** — the infrastructure weighs less than 50 kB gzipped
 - **debuggable** — use chrome devtools to debug at runtime, and use vscode to debug tests, sourcemaps work
 - **frontend-only** — if you need a node server, make it a separate repo, and use containers for god's sake
 - **unopinionated** — no linter, no hints about application architecture
