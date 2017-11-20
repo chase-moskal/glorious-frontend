@@ -2,8 +2,7 @@
 GLORIUS FRONTEND — [![build status](https://travis-ci.org/ChaseMoskal/glorious-frontend.svg?branch=master)](https://travis-ci.org/ChaseMoskal/glorious-frontend)
 ================
 
-### a stack to stake your career on
-### live demo (counter widget demo): [⟶ chasemoskal.github.io/glorious-frontend ⟵](https://chasemoskal.github.io/glorious-frontend/)
+_a stack to stake your career on_ [⟶ chasemoskal.github.io/glorious-frontend ⟵](https://chasemoskal.github.io/glorious-frontend/)
 
 ### javascript tooling
 
