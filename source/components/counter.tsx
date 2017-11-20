@@ -20,8 +20,8 @@ export default class Counter extends Component<{store: CounterStore}, any> {
 		const {store} = this.props
 		return (
 			<div className="counter">
-				<p>Current count: <strong>{store.count}</strong></p>
-				<button onClick={this.incrementHandler}>Increment</button>
+				<strong>{store.count}</strong>
+				<button onClick={this.incrementHandler}>increment</button>
 			</div>
 		)
 	}

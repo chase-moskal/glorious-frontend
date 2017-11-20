@@ -22,6 +22,7 @@
 		"build-scripts": "browserify source/main.tsx -p [ tsify ] -g [ envify --NODE_ENV production ] -g uglifyify > dist/main.bundle.uncompressed.js && uglifyjs -cm < dist/main.bundle.uncompressed.js > dist/main.bundle.js",
 		"build-scripts-debug": "browserify source/main.tsx --debug -p [ tsify ] > dist/main.bundle.js",
 		"build-styles": "node-sass --source-map true source/style.scss dist/style.css",
+		"watch-styles": "npm run build-styles -s -- --watch",
 		"test": "jest --coverage --verbose",
 		"start": "http-server -p 8080"
 	},

@@ -11,12 +11,11 @@ export class AppStore {
 
 @observer
 export default class App extends Component<{store: AppStore}, any> {
+
 	render() {
 		const {store} = this.props
 		return (
 			<div className="app">
-				<h1>Glorious Frontend</h1>
-				<hr/>
 				<Counter store={store.counter}/>
 			</div>
 		)
