@@ -1,6 +1,5 @@
 
 import {h, render} from "preact"
-
 import App, {AppStore} from "./components/app"
 
 const store = new AppStore()

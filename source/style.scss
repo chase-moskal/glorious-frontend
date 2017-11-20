@@ -3,15 +3,31 @@
 
 html {
 	padding: 1em;
-	font-family: sans-serif;
+	font-family: "Barlow Condensed", sans-serif;
 	color: #444;
+	text-align: center;
+}
+
+h1 {
+	font-weight: lighter;
+	letter-spacing: 0.1em;
 }
 
 .counter {
 	display: inline-block;
+	min-width: 2em;
 	padding: 0.5em 1em;
 	text-align: center;
 	background: #f8f8f8;
 	border: 1px solid #ddd;
 	border-radius: 2px;
+
+	strong {
+		display: block;
+	}
+
+	button {
+		margin-top: 1em;
+		display: block;
+	}
 }
