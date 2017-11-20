@@ -1,30 +1,54 @@
 {
 	"name": "glorious-frontend",
 	"version": "0.3.0-dev",
-	"description": "frontend application foundation featuring typescript, preact, mobx, sass",
-	"main": "index.js",
+	"description": "a stack to stake your career on",
+	"keywords": [
+		"frontend",
+		"template",
+		"typescript",
+		"preact",
+		"mobx",
+		"jest"
+	],
 	"private": true,
+	"main": "dist/main.bundle.js",
+	"author": "Chase Moskal <chasemoskal@gmail.com>",
+	"license": "ISC",
 	"scripts": {
-		"prepare": "npm run build -s",
+		"prepare": "npm run build -s && npm test -s",
 		"clean": "rimraf dist && mkdirp dist",
-		"build": "npm run clean -s && run-p build-scripts build-styles && echo Done production build.",
-		"build-debug": "npm run clean -s && run-p build-scripts-debug build-styles && echo Done debug build.",
+		"build": "npm run clean -s && run-p build-scripts build-styles && echo ✔ done production build",
+		"build-debug": "npm run clean -s && run-p build-scripts-debug build-styles && echo ✔ done debug build",
 		"build-scripts": "browserify source/main.tsx -p [ tsify ] -g [ envify --NODE_ENV production ] -g uglifyify > dist/main.bundle.uncompressed.js && uglifyjs -cm < dist/main.bundle.uncompressed.js > dist/main.bundle.js",
 		"build-scripts-debug": "browserify source/main.tsx --debug -p [ tsify ] > dist/main.bundle.js",
 		"build-styles": "node-sass --source-map true source/style.scss dist/style.css",
-		"test": "echo Not test driven, lol && exit 0",
+		"test": "jest --coverage --verbose",
 		"start": "http-server -p 8080"
 	},
-	"author": "Chase Moskal <chasemoskal@gmail.com>",
-	"license": "ISC",
+	"jest": {
+		"transform": {
+			"^.+\\.tsx?$": "ts-jest"
+		},
+		"testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+		"moduleFileExtensions": [
+			"ts",
+			"tsx",
+			"js",
+			"jsx",
+			"json"
+		]
+	},
 	"devDependencies": {
+		"@types/jest": "21.1.6",
 		"browserify": "14.5.0",
 		"envify": "4.1.0",
 		"http-server": "0.10.0",
+		"jest": "21.2.1",
 		"mkdirp": "0.5.1",
 		"node-sass": "4.5.3",
 		"npm-run-all": "4.1.1",
 		"rimraf": "2.6.2",
+		"ts-jest": "21.2.3",
 		"typescript": "2.5.3",
 		"uglify-es": "3.1.5",
 		"uglifyify": "4.0.4"
