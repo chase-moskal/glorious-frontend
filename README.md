@@ -1,5 +1,5 @@
 
-# G L O R I O U S • F R O N T E N D — [![build status](https://travis-ci.org/ChaseMoskal/glorious-frontend.svg?branch=master)](https://travis-ci.org/ChaseMoskal/glorious-frontend)
+# G L O R I O U S • F R O N T E N D — [![build status](https://travis-ci.org/chase-moskal/glorious-frontend.svg?branch=master)](https://travis-ci.org/chase-moskal/glorious-frontend)
 
 *a stack to stake your career on* [⟶ chasemoskal.github.io/glorious-frontend ⟵](https://chasemoskal.github.io/glorious-frontend/)
 
